@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="My ctrl c page">
+    <title>~mark1626</title>
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css">
+  </head>
+  <body class="center code bg-washed-green pa3">
+    <noscript>Don't worry friend this space is free from javascript</noscript>
+    <nav class="pa4-ns">
+      <div class="dib">
+        <a class="link dim black b f2 db mb3 mb4-ns" title="Home">Nimalan ~mark1626</a>
+        <div class="pb3">
+          <a class="link dim gray f6 f5-ns dib mr1" href="#" title="Home">| about |</a>
+          <a class="link dim gray f6 f5-ns dib mr1 ml1" href="#" title="micro-blog">micro-blog |</a>
+          <a class="link dim gray f6 f5-ns dib mr1 ml1" href="#" title="projects">projects |</a>
+          <a class="link dim gray f6 f5-ns dib mr1 ml1" href="#" title="github">github |</a>
+          <a class="link dim gray f6 f5-ns dib mr1 ml1" href="#" title="web-ring">web-ring |</a>
+        </div>
+      </div>
+      <div class="dib fr">
+        <a class="link dim black b f3 tr db mb1 mb1-ns" href="#" title="Home">RSS</a>
+        <a class="link dim black b f6 tr db mb3 mb4-ns" href="#" title="Home">site-map</a>
+      </div>
+    </nav>
+    <div class="pa3 pa4-ns">
+      <blockquote class="athelas ml0 mt0 pl4 black-90 bl bw2 b--black">
+        <p class="f5 f4-m f3-l lh-copy measure mt0">
+          {{.Quote}}
+        </p>
+      </blockquote>
+    </div>
+    <div class="ml3">
+      <h3 class="f3">Recent Activity</h3>
+      {{range .Articles}}
+        <article class="mw8 mw6-m hidden ba mv4">
+          <h1 class="f4 bg-dark-{{.Theme}} white mv0 pv2 ph3">{{.Title}}</h1>
+          <div class="pa3 bt">
+            <p class="f6 f5-ns lh-copy measure mv0">
+              {{.Content}}
+            </p>
+          </div>
+        </article>
+      {{end}}
+    </div>
+  </body>
+</html>
