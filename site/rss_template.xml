@@ -1,5 +1,6 @@
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
+    <atom:link href="http://ctrl-c.club/~mark1626/rss.xml" rel="self" type="application/rss+xml"/>
     <title>Mark's feed</title>
     <link>http://ctrl-c.club/~mark1626/index.html</link>
     <description>A small showcase of myself.</description>
