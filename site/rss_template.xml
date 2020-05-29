@@ -1,0 +1,28 @@
+<rss version="2.0">
+  <channel>
+    <title>Mark's feed</title>
+    <link>http://ctrl-c.club/~mark1626/index.html</link>
+    <description>A small showcase of myself.</description>
+    <language>en-us</language>
+    <pubDate>Fri, 29 May 2020 07:45:59 GMT</pubDate>
+    {{range .Articles}}
+    <item>
+      <title>{{.Title}}</title>
+      <link>
+      {{.Url}}
+      </link>
+      <description>
+      <![CDATA[
+        <pre>
+        {{.Content}}
+        </pre>
+      ]]>
+      </description>
+      <pubDate>{{.PubDate}}</pubDate>
+      <guid>
+      {{.Url}}
+      </guid>
+    </item>
+    {{end}}
+  </channel>
+</rss>

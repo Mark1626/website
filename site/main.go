@@ -10,6 +10,8 @@ import (
 type Article struct {
 	Title   string
 	Theme   string
+	Url     string
+	PubDate string
 	Content string
 }
 
@@ -18,16 +20,31 @@ type Content struct {
 	Articles []Article
 }
 
+func handleError(err error) {
+	if err != nil {
+		log.Fatal(err)
+	}
+}
+
 func main() {
+	html, err := os.Create("./index.html")
+	handleError(err)
+	defer html.Close()
+
+	rss, err := os.Create("./rss.xml")
+	handleError(err)
+	defer rss.Close()
+
+	templateRSS, err := ioutil.ReadFile("./rss_template.xml")
+	handleError(err)
+
 	templateHTML, err := ioutil.ReadFile("./template.html")
-	if err != nil {
-		log.Fatal(err)
-	}
+	handleError(err)
 
-	tmpl := template.Must(template.New("site").Parse(string(templateHTML)))
+	rssTmpl := template.Must(template.New("rss").Parse(string(templateRSS)))
+	htmlTmpl := template.Must(template.New("site").Parse(string(templateHTML)))
 
-	err = tmpl.Execute(os.Stdout, SiteContent)
-	if err != nil {
-		log.Fatal(err)
-	}
+	err = htmlTmpl.Execute(html, SiteContent)
+	handleError(err)
+	err = rssTmpl.Execute(rss, SiteContent)
 }
