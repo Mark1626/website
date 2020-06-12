@@ -1,0 +1,13 @@
+plugins {
+  id "application"
+}
+
+repositories {
+  jcenter()
+}
+
+dependencies {
+  implementation "org.freemarker:freemarker:2.3.30"
+}
+
+mainClassName = "com.mark.Templator"
