@@ -1,0 +1,7 @@
+# ~mark1626
+
+Entering the gemini space !!
+
+=> til/index.gmi TIL
+=> pop/index.gmi Short Programming Articles
+=> crochet/index.gmi Crochet Patters which I designed

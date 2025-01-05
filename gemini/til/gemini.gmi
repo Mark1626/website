@@ -1,0 +1,12 @@
+# Gemini Markdown
+
+=> index.gmi Back
+
+Gemini markdown seems rather simple compared to regular markdown.
+
+* Lines are not wrapped at 80 characters, so they can get very long
+* Heading are same as markdown #, ##, ###
+* List is also the same as markdown using *
+* Preformatted text uses ```
+
+And that it!!

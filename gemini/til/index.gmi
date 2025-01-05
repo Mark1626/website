@@ -1,0 +1,7 @@
+# TIL
+
+=> ../index.gmi Back
+
+Trying to enter something everyday
+
+=> gemini.gmi 01-11-2024 Gemini Markup

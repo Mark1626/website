@@ -1,0 +1,7 @@
+# Short Articles
+
+=> ../index.gmi Back
+
+## Articles
+
+=> destructuring.gmi Destructuring Function Parameters

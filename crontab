@@ -1,8 +1,5 @@
 # My cron in ctrl-c club
 # m h  dom mon dow   command
-0,30  * * * * lua /home/mark1626/code/anna/anna.lua
-* 1 * * * curl -L  https://raw.githubusercontent.com/Mark1626/micro-blog/master/twtxt.txt > /home/mark1626/public_html/twtxt.txt
-mark1626@copper:~/public_html$
-
-
-
+# * 1 * * * curl -L  https://raw.githubusercontent.com/Mark1626/micro-blog/master/twtxt.txt > /home/mark1626/public_html/twtxt.txt
+0 0 * * * /home/mark1626/code/today-koan.bash
+0 0 * * * rsync -rlp --exclude '.git' /home/mark1626/code/crochet-patterns/ /home/mark1626/public_gemini/crochet/

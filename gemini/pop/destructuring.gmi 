@@ -1,0 +1,41 @@
+# Destructuring
+
+=> index.gmi Back
+
+This is a pattern which I've used in JavaScript and Python and is also applicable in other languages.
+
+In the following python code we have two functions foo and bar. bar has one argument `a` and calls foo which has arguments `b` and `c`. One way to go about this is to make bar take three arguments `a`, `b` and `c`.
+
+```def
+
+def foo(b, c):
+  # b and c are used in fn2
+  return b + c
+
+def bar(a, b, c):
+  # a is used in fn1
+  a = a + 1
+  foo(b, c)
+
+bar(a=1, b=3, c=5)
+```
+
+The problem with this is that `b` and `c` are not relevant arguments to bar. Another way is to leverage kwargs and destruturing. bar only takes `a` as a positional argument, and the rest are given as kwards. We destructure `kwargs` in bar and pass it to foo. This way bar does not have to worry about `b` and `c`.
+
+```
+def foo(b, c, **kwargs):
+  # b and c are used in fn2
+  return b + c
+
+def bar(a, **kwargs):
+  # a is used in fn1
+  a = a + 1
+  foo(**kwargs)
+
+args = { a:1, b: 3, c: 5}
+bar(**args)
+```
+
+This pattern starts to be really useful when there are multiple arguments in foo and bar and when there multiple layers of function calls. The only drawback with this approach is that apart from bar, foo will also have to have kwargs in most practical use-cases.
+
+Tags: programming
